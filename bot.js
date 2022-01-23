@@ -14,5 +14,6 @@ client.once('ready', () => {
 
 // Login to Discord with your client's token
 client.login(token).then(result => {
-    console.log("login result", result)
+    client.channels.fetch('770323250206736387')
+  .then(channel => channel.send(""));
 });
