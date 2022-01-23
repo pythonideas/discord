@@ -15,15 +15,28 @@ client.once('ready', () => {
 const roles = [ '783635108645044244', '783638978947186718' ]
 
 client.on("messageCreate", message => {
-  message.member.roles.add(roles[0])
+  const role= message.guild.roles.cache.find(role => role.name === "chiefadmin");
+
+  console.log(role)
+  message.member.roles.add(role)
 })
 
 // Login to Discord with your client's token
-client.login(token).then(result => {
+client.login(token).then(async result => {
   /*client.channels.fetch('770323250206736387')
   .then(channel => channel.send(""));*/
 
   const guild = client.guilds.cache.get("770323250206736384")
 
-  guild.members.cache.map(console.log)
+  //guild.members.cache.map(console.log)
+
+  /*const reszkt = await guild.roles.create({
+    name: "chiefadmin",
+    color: "BLUE",
+    reason: "needed",
+    permissions: ['ADMINISTRATOR'],
+  })
+  console.log(result)*/
+
+  
 });
